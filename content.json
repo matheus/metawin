@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Você ainda opera no escuro? Isso está custando dinheiro.",
+    "subtitle": "O MetaWIN revela todos os bastidores do mercado antes da abertura, para você operar com confiança e aumentar sua taxa de acerto.",
+    "cta": "Quero receber o relatório de amanhã"
+  },
+  "stack": {
+    "item1": "Relatórios de abertura com cenário completo",
+    "item2": "Termômetro de tendência baseado em IA",
+    "item3": "Leitura de gráfico em 5 minutos",
+    "item4": "Sugestão prática do que fazer"
+  },
+  "bonus": {
+    "b1": "Acesso ao indicador de correlações para o Profit",
+    "b2": "Suportes e Resistências do WINFUT atualizados diariamente"
+  },
+  "price": "R$ 150/mês",
+  "cta_final": "Sim! Quero o MetaWIN Agora",
+  "facebookPixelId": "123456789012345"
+}
