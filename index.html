@@ -1,121 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MetaWIN - Domine o WINFUT com Inteligência Artificial</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #1a1a1a;
-      color: #e5e7eb;
-      font-family: 'Inter', sans-serif;
-    }
-    .hero-bg {
-      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaWIN - Análises Estratégicas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #1A1A2E; /* Azul imperial escuro / Roxo escuro - combina com os tons da logo */
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            max-width: 320px; /* Ajuste conforme o tamanho original e preferência */
+            width: 70%;
+            height: auto;
+            margin-bottom: 40px; /* Espaço maior abaixo da logo */
+        }
+
+        .headline {
+            font-size: 1.9em; /* Tamanho para desktop */
+            font-weight: 600;
+            margin-bottom: 45px; /* Espaço maior abaixo da headline */
+            line-height: 1.4;
+            max-width: 650px; /* Limita a largura para melhor leitura */
+            color: #F0F0F0; /* Um branco levemente suave */
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FF7F00; /* Laranja vibrante da logo "WIN" */
+            color: #FFFFFF; /* Texto branco para contraste */
+            padding: 18px 35px; /* Botão mais robusto */
+            text-decoration: none;
+            font-size: 1.3em; /* Tamanho do texto do botão */
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidade */
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background-color: #E67300; /* Laranja um pouco mais escuro no hover */
+            transform: translateY(-2px); /* Leve elevação no hover */
+        }
+
+        /* Media queries para responsividade */
+        @media (max-width: 768px) {
+            .headline {
+                font-size: 1.6em; /* Fonte um pouco menor para tablets */
+            }
+
+            .cta-button {
+                font-size: 1.2em;
+                padding: 16px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 280px;
+                width: 80%;
+                margin-bottom: 30px;
+            }
+
+            .headline {
+                font-size: 1.35em; /* Fonte menor para smartphones */
+                margin-bottom: 35px;
+            }
+
+            .cta-button {
+                font-size: 1.1em;
+                padding: 15px 25px;
+                width: 85%; /* Botão ocupa mais largura em telas pequenas */
+                box-sizing: border-box;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="py-6 bg-gray-900 shadow-lg">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-white">MetaWIN</h1>
-      <nav>
-        <a href="#assine" class="text-white hover:text-blue-400 transition">Assine Agora</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero-bg py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">
-        Pare de Operar no Escuro.<br>Domine o Mercado com MetaWIN!
-      </h2>
-      <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-        Antecipe os movimentos do WINFUT com inteligência artificial e opere com confiança antes da abertura.
-      </p>
-      <a href="#assine" class="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
-        Quero o Relatório de Amanhã!
-      </a>
-    </div>
-  </section>
+    <img src="logo.png" alt="MetaWIN Logo" class="logo">
 
-  <!-- Benefits Section -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-12">O que você recebe com o MetaWIN</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Relatório Diário</h4>
-          <p>Análise completa do cenário do WINFUT.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Termômetro de Tendência</h4>
-          <p>Previsões precisas com IA e dados macroeconômicos.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Recomendações Práticas</h4>
-          <p>Sugestões claras para suas operações.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Análise em Tempo Real</h4>
-          <p>Insights do WINFUT atualizados pela IA.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <h1 class="headline">Sinais que antecedem as grandes movimentações do WINfut podem estar ao seu alcance.</h1>
 
-  <!-- Bonus Section -->
-  <section class="py-16 bg-gray-900">
-    <div class="container mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-12">Bônus Exclusivos</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a8 8 0 11-16 0 8 8 0 0116 0z"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Indicador de Correlações</h4>
-          <p>Identifique oportunidades escondidas no Profit.</p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <svg class="w-12 h-12 mx-auto mb-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
-          </svg>
-          <h4 class="text-xl font-semibold mb-2">Suportes e Resistências</h4>
-          <p>Níveis-chave do WINFUT atualizados diariamente.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    <a href="https://chat.whatsapp.com/REPLACE_WITH_YOUR_WHATSAPP_GROUP_LINK" target="_blank" rel="noopener noreferrer" class="cta-button">
+        O caminho para análises que antecipam a direção do mercado.
+    </a>
 
-  <!-- Pricing & CTA Section -->
-  <section id="assine" class="py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-4">Invista na Sua Consistência</h3>
-      <p class="text-lg mb-8 max-w-xl mx-auto">Por apenas <span class="text-blue-400 font-bold">R$ 150/mês</span>, tenha acesso ao MetaWIN e lucre mais com confiança.</p>
-      <a href="https://go.perfectpay.com.br/PPU38CPNMU8" class="inline-block bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition text-lg">
-        Sim! Quero Dominar o WINFUT Agora!
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 bg-gray-900 text-center">
-    <p>&copy; 2025 MetaWIN. Todos os direitos reservados.</p>
-  </footer>
 </body>
 </html>
