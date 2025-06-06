@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Título e Meta Descrição -->
-    <title>MetaWinFut - Acesso Grátis ao Grupo</title>
-    <meta name="description" content="Tenha acesso a uma inteligência artificial que analisa o mercado e o impacto de decisões políticas no mini-índice.">
+    <title>MetaWinFut - Análises com I.A.</title>
+    <meta name="description" content="A influência da política no mini-índice, decifrada por Inteligência Artificial.">
 
     <!-- Favicon (substitua 'favicon.ico' pelo caminho do seu ícone) -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,12 +14,12 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome (para o ícone do Telegram) -->
+    <!-- Font Awesome (para ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Meta Pixel Code (substitua pelo seu código) -->
@@ -29,11 +29,14 @@
     <!-- End Meta Pixel Code -->
 
     <style>
-        /* Estilo customizado para usar a fonte Inter */
+        /* Estilo customizado para usar a fonte Inter com peso maior */
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+        h1 {
+            font-weight: 900; /* Black weight for headline */
         }
         /* Efeito de transição suave no botão */
         .cta-button {
@@ -41,7 +44,7 @@
         }
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(3, 105, 161, 0.2);
         }
     </style>
 </head>
@@ -60,24 +63,33 @@
             >
             
             <!-- Headline -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-4 uppercase">
-                <span class="text-purple-600">Todo daytrader já levou stop</span> porque uma decisão Política mudou a tendência do mini-índice
+            <h1 class="text-3xl sm:text-4xl md:text-5xl text-gray-800 leading-tight mb-4 uppercase">
+                A influência da política no mini-índice, decifrada por <span class="text-purple-600">Inteligência Artificial.</span>
             </h1>
 
             <!-- Texto de Apoio -->
             <p class="text-lg sm:text-xl text-gray-600 mb-10">
-                Um humano não consegue analisar todo o mercado em segundos, mas <span class="text-blue-500 font-semibold">uma inteligência artificial consegue</span>, tenha acesso a essa inteligência hoje.
+                Nossa I.A. monitora o cenário 24/7 e cruza dados em tempo real, transformando ruído político em <span class="text-blue-500 font-bold">sinais claros para os seus trades.</span>
             </p>
-
-            <!-- Botão de CTA (Call to Action) -->
-            <a 
-                href="https://t.me/metawinfut"
-                target="_blank" 
-                class="cta-button inline-flex items-center justify-center w-full sm:w-auto text-white text-lg sm:text-xl font-bold py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg"
-            >
-                <i class="fab fa-telegram-plane mr-2 text-2xl"></i>
-                Nosso grupo gratuito no Telegram
-            </a>
+            
+            <!-- Container do Botão e Texto Informativo -->
+            <div class="flex flex-col items-center">
+                <!-- Botão de CTA (Call to Action) -->
+                <a 
+                    href="https://t.me/metawinfut"
+                    target="_blank" 
+                    class="cta-button inline-flex items-center justify-center w-full sm:w-auto text-white text-lg sm:text-xl font-bold py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg"
+                >
+                    <i class="fa-solid fa-arrow-trend-up mr-3 text-2xl"></i>
+                    Quero me Antecipar ao Mercado
+                </a>
+                
+                <!-- Texto Informativo do Telegram -->
+                <p class="mt-4 text-sm text-gray-500 flex items-center">
+                    <i class="fab fa-telegram-plane mr-2"></i>
+                    Acesso gratuito ao nosso grupo no Telegram.
+                </p>
+            </div>
         </div>
 
     </main>
