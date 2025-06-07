@@ -1,126 +1,346 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>metawinfut - análises estratégicas</title> <meta name="description" content="o metawinfut é uma inteligência artificial focada em prever as tendências do mini-indice do IBOV entregando análises completas de todo o cenário econômico em segundos"> <link rel="icon" href="favicon.ico" type="image/x-icon"> <style>
+
+    <!-- Título e Meta Descrição -->
+    <title>MetaWinFut - A Vantagem para Daytraders</title>
+    <meta name="description" content="Acesso a uma ferramenta de Inteligência Artificial que interpreta o impacto do mercado financeiro no mini-índice, antes que as notícias se espalhem.">
+
+    <!-- Favicon (substitua 'favicon.ico' pelo caminho do seu ícone) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Meta Pixel Code (substitua pelo seu código) -->
+    <script>
+    // Cole o seu código do Pixel do Facebook aqui
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* Estilo customizado para usar a fonte Inter com peso maior */
         body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: #1A1A2E; /* Azul imperial escuro / Roxo escuro */
-            color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        .logo {
-            max-width: 320px;
-            width: 70%;
-            height: auto;
-            margin-bottom: 35px; /* Ajuste de margem */
+        h1, h2, h3 {
+            font-weight: 900; /* Black weight for headlines */
         }
-
-        .headline {
-            font-size: 1.9em;
-            font-weight: 600;
-            margin-bottom: 15px; /* Reduzida para acomodar o subtítulo */
-            line-height: 1.4;
-            max-width: 680px; /* Leve ajuste para o novo texto */
-            color: #F0F0F0;
-        }
-
-        .subtitle {
-            font-size: 1.15em; /* Tamanho para o subtítulo */
-            font-weight: 400;
-            line-height: 1.5;
-            color: #D0D0D0; /* Um tom de branco um pouco mais suave */
-            margin-top: 0;
-            margin-bottom: 35px; /* Espaço antes do botão CTA */
-            max-width: 550px;
-        }
-
+        /* Efeito de transição suave no botão */
         .cta-button {
-            display: inline-block;
-            background-color: #FF7F00; /* Laranja vibrante */
-            color: #000000; /* Texto PRETO */
-            padding: 18px 40px; /* Padding ajustado para o novo texto */
-            text-decoration: none;
-            font-size: 1.25em; /* Tamanho do texto do botão */
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            line-height: 1.3;
-            /* text-transform: uppercase;  Se quiser forçar maiúsculas via CSS */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: #E67300;
-            transform: translateY(-2px);
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(129, 140, 248, 0.3);
         }
-
-        /* Media queries para responsividade */
-        @media (max-width: 768px) {
-            .headline {
-                font-size: 1.7em; /* Ajuste para tablet */
-                max-width: 90%;
-            }
-
-            .subtitle {
-                font-size: 1.05em;
-                max-width: 90%;
-            }
-
-            .cta-button {
-                font-size: 1.15em;
-                padding: 16px 35px;
-            }
+        .faq-question {
+            transition: background-color 0.2s ease;
         }
-
-        @media (max-width: 480px) {
-            .logo {
-                max-width: 260px; /* Ajuste para mobile */
-                width: 65%;
-                margin-bottom: 30px;
-            }
-
-            .headline {
-                font-size: 1.45em; /* Ajuste para mobile */
-            }
-
-            .subtitle {
-                font-size: 1em;
-                margin-bottom: 30px;
-            }
-
-            .cta-button {
-                font-size: 1.1em; /* Ajuste para mobile */
-                padding: 15px 30px;
-                width: 85%;
-                max-width: 320px; /* Ajuste para o novo texto */
-                box-sizing: border-box;
-            }
+        .faq-question:hover {
+            background-color: #1f2937; /* gray-800 */
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-question.active .faq-answer {
+            max-height: 300px; /* Adjust as needed */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .faq-question.active .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        .fa-chevron-down {
+            transition: transform 0.3s ease;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-200">
 
-    <img src="logo.png" alt="MetaWIN Logo" class="logo">
+    <!-- SEÇÃO HERO -->
+    <header class="min-h-screen flex flex-col items-center justify-center p-4 text-center bg-gray-900">
+        <div class="max-w-2xl w-full">
+            <!-- Logo -->
+            <img    
+                src="logo.png"
+                alt="Logo MetaWinFut"    
+                class="w-48 sm:w-56 mx-auto mb-8"
+                onerror="this.style.display='none'"
+            >
+            
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl text-gray-100 leading-tight mb-4 uppercase">
+                A <span class="text-purple-500">Vantagem</span> que a maioria dos daytraders ainda não conhece.
+            </h1>
 
-    <h1 class="headline">Os movimentos mais fortes do WINFUT podem ser previstos — e você pode estar um passo à frente</h1>
+            <!-- Texto de Apoio -->
+            <p class="text-lg sm:text-xl text-gray-300 mb-10">
+                Acesso a uma ferramenta de Inteligência Artificial que interpreta o impacto do mercado financeiro no mini-índice, <span class="text-blue-400 font-bold">antes que as notícias se espalhem.</span>
+            </p>
+            
+            <!-- Botão de CTA -->
+            <a  
+                href="#pricing"
+                class="cta-button inline-block text-white text-lg sm:text-xl font-bold py-4 px-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg"
+            >
+                <i class="fa-solid fa-bolt mr-3"></i>
+                Quero Minha Vantagem Agora
+            </a>
+            <p class="mt-3 text-sm text-gray-400">Acesso imediato após a confirmação.</p>
+        </div>
+    </header>
 
-    <p class="subtitle">Grupo gratuito no WhatsApp. Clique e comece</p>
+    <main>
+        <!-- SEÇÃO COMO FUNCIONA -->
+        <section class="py-16 sm:py-20 bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl text-white mb-4">Opere na frente do mercado</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-12">Nossa IA entrega a informação que realmente importa, de forma simples e direta. Veja como:</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Passo 1 -->
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <i class="fa-solid fa-robot text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-2xl text-white mb-2">Monitoramento 24/7</h3>
+                        <p class="text-gray-400">Nossa IA varre milhares de fontes de dados financeiros globais, 24 horas por dia, em busca de eventos com potencial de impacto.</p>
+                    </div>
+                    <!-- Passo 2 -->
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <i class="fa-solid fa-magnifying-glass-chart text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-2xl text-white mb-2">Análise de Impacto</h3>
+                        <p class="text-gray-400">A IA interpreta os dados e calcula a probabilidade de impacto (alta ou baixa) no mini-índice, traduzindo ruído em informação clara.</p>
+                    </div>
+                    <!-- Passo 3 -->
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <i class="fa-brands fa-telegram text-4xl text-purple-500 mb-4"></i>
+                        <h3 class="text-2xl text-white mb-2">Alerta Imediato</h3>
+                        <p class="text-gray-400">Você recebe um alerta direto no seu Telegram com a análise pronta, minutos ou até horas antes da notícia virar manchete.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <a href="https://chat.whatsapp.com/GJsyDb2gbi1IO3wznRJvOM" target="_blank" rel="noopener noreferrer" class="cta-button">
-        QUERO COMEÇAR
-    </a>
+        <!-- SEÇÃO DE BENEFÍCIOS -->
+        <section class="py-16 sm:py-20 bg-black bg-opacity-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl text-white">Projetado para <span class="text-blue-400">sua máxima performance</span></h2>
+                    <p class="text-lg text-gray-400 mt-2">Menos achismo, mais estratégia.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-8">
+                    <!-- Benefício 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-clock-rotate-left text-2xl text-blue-500 mt-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Antecipe os Movimentos</h3>
+                            <p class="text-gray-400">Saiba para onde o mercado tende a ir antes da maioria, posicionando-se para lucrar com a volatilidade inicial.</p>
+                        </div>
+                    </div>
+                    <!-- Benefício 2 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-bullseye text-2xl text-blue-500 mt-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Aumente sua Assertividade</h3>
+                            <p class="text-gray-400">Tome decisões baseadas em dados de alta performance, não em intuição. Reduza o fator emocional das suas operações.</p>
+                        </div>
+                    </div>
+                    <!-- Benefício 3 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-hourglass-start text-2xl text-blue-500 mt-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Economize Tempo e Energia</h3>
+                            <p class="text-gray-400">Chega de passar horas lendo notícias e relatórios. Nós fazemos o trabalho pesado e entregamos a análise pronta para você.</p>
+                        </div>
+                    </div>
+                    <!-- Benefício 4 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <i class="fa-solid fa-shield-halved text-2xl text-blue-500 mt-1"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Opere com Mais Confiança</h3>
+                            <p class="text-gray-400">Tenha uma ferramenta poderosa ao seu lado, validando suas estratégias e te dando mais segurança para entrar e sair das operações.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DEPOIMENTOS -->
+        <section class="py-16 sm:py-20 bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl text-white mb-12">O que os <span class="text-purple-500">Traders Pro</span> dizem</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-left">
+                        <div class="mb-4">
+                            <p class="font-bold text-white">João S.</p>
+                            <p class="text-sm text-gray-400">Trader há 4 anos</p>
+                        </div>
+                        <p class="text-gray-300 italic">"A MetaWinFut mudou meu jogo. Na semana passada peguei um movimento de 800 pontos no índice só com um alerta da IA. Já paguei a assinatura de 1 ano em um único dia."</p>
+                    </div>
+                    <!-- Depoimento 2 -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-left">
+                        <div class="mb-4">
+                            <p class="font-bold text-white">Carla M.</p>
+                            <p class="text-sm text-gray-400">Daytrader</p>
+                        </div>
+                        <p class="text-gray-300 italic">"Era cética no início, mas a velocidade da informação é surreal. Enquanto as notícias saem na TV, eu já estou posicionada. Indispensável pra quem opera mini-índice."</p>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-left">
+                        <div class="mb-4">
+                            <p class="font-bold text-white">Ricardo L.</p>
+                            <p class="text-sm text-gray-400">Trader e Analista</p>
+                        </div>
+                        <p class="text-gray-300 italic">"Como analista, valorizo dados. E o que essa ferramenta entrega é um dado de altíssima qualidade. Deixa o 'achismo' de lado e te dá um norte claro. Vale cada centavo."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE PREÇO -->
+        <section id="pricing" class="py-16 sm:py-24">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto bg-gradient-to-br from-gray-800 to-gray-900 border border-purple-600 rounded-2xl shadow-2xl p-8 sm:p-12 text-center">
+                    <h2 class="text-3xl md:text-4xl text-white mb-4">Acesso Imediato à sua Vantagem</h2>
+                    <p class="text-lg text-gray-400 mb-6">Junte-se ao grupo de traders que operam com informação privilegiada.</p>
+                    
+                    <div class="my-8">
+                        <p class="text-gray-400 text-lg">Assinatura Mensal</p>
+                        <p class="text-5xl md:text-6xl font-black text-white my-2">R$ 97<span class="text-2xl text-gray-400">/mês</span></p>
+                    </div>
+
+                    <ul class="text-left space-y-4 mb-10 max-w-md mx-auto">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-400 mr-3"></i> Análises de IA em tempo real</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-400 mr-3"></i> Alertas de impacto no Mini-Índice</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-400 mr-3"></i> Acesso ao Canal VIP no Telegram</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-400 mr-3"></i> Relatórios de performance da IA</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-400 mr-3"></i> Suporte Prioritário</li>
+                    </ul>
+
+                    <a  
+                        href="https://pay.kiwify.com.br/RTr2mXM"
+                        target="_blank"
+                        class="cta-button inline-block w-full text-white text-xl sm:text-2xl font-bold py-4 px-8 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg"
+                    >
+                        <i class="fa-solid fa-lock mr-3"></i>
+                        ASSINAR PLANO PRO AGORA
+                    </a>
+                    <p class="mt-4 text-sm text-gray-400 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-alt mr-2"></i>
+                        Ambiente 100% seguro. Cancele quando quiser.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO FAQ -->
+        <section class="py-16 sm:py-20 bg-gray-900">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <h2 class="text-3xl md:text-4xl text-white text-center mb-12">Perguntas Frequentes</h2>
+                <div class="space-y-4" id="faq-container">
+                    <!-- Pergunta 1 -->
+                    <div class="faq-question border-b border-gray-700 pb-4 cursor-pointer">
+                        <div class="w-full flex justify-between items-center text-left text-xl font-semibold text-white">
+                            <span>Preciso ter experiência para usar a ferramenta?</span>
+                            <i class="fas fa-chevron-down text-purple-500"></i>
+                        </div>
+                        <div class="faq-answer text-gray-400 pr-5">
+                            Não. A ferramenta foi desenhada para ser simples. Nós entregamos a análise já "traduzida", dizendo se o impacto provável é de alta ou baixa. É ideal tanto para iniciantes que querem uma base sólida, quanto para traders experientes que buscam otimizar suas decisões.
+                        </div>
+                    </div>
+                    <!-- Pergunta 2 -->
+                    <div class="faq-question border-b border-gray-700 pb-4 cursor-pointer">
+                        <div class="w-full flex justify-between items-center text-left text-xl font-semibold text-white">
+                            <span>Como eu recebo as análises?</span>
+                            <i class="fas fa-chevron-down text-purple-500"></i>
+                        </div>
+                        <div class="faq-answer text-gray-400 pr-5">
+                            Assim que você assina, recebe o link de acesso ao nosso canal exclusivo e privado no Telegram. Todos os alertas e análises da IA são enviados lá em tempo real. Você só precisa ter o Telegram instalado no seu celular ou computador.
+                        </div>
+                    </div>
+                    <!-- Pergunta 3 -->
+                    <div class="faq-question border-b border-gray-700 pb-4 cursor-pointer">
+                        <div class="w-full flex justify-between items-center text-left text-xl font-semibold text-white">
+                            <span>Como funciona o cancelamento?</span>
+                            <i class="fas fa-chevron-down text-purple-500"></i>
+                        </div>
+                        <div class="faq-answer text-gray-400 pr-5">
+                            É 100% livre de burocracia. Você pode cancelar sua assinatura a qualquer momento, diretamente na plataforma de pagamento. Sem perguntas, sem multa, sem complicação. Ao cancelar, você continua com acesso até o fim do período mensal que já foi pago.
+                        </div>
+                    </div>
+                    <!-- Pergunta 4 -->
+                    <div class="faq-question border-b border-gray-700 pb-4 cursor-pointer">
+                        <div class="w-full flex justify-between items-center text-left text-xl font-semibold text-white">
+                            <span>Quais são as formas de pagamento?</span>
+                            <i class="fas fa-chevron-down text-purple-500"></i>
+                        </div>
+                        <div class="faq-answer text-gray-400 pr-5">
+                            Aceitamos as principais formas de pagamento, incluindo Cartão de Crédito (com liberação imediata do acesso) e PIX. Todo o processo é gerenciado por uma das maiores e mais seguras plataformas de pagamento do Brasil.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-gray-800 border-t border-gray-700 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <img src="logo.png" alt="Logo MetaWinFut" class="w-40 mx-auto mb-4" onerror="this.style.display='none'">
+            <p class="mb-4">MetaWinFut &copy; 2024. Todos os direitos reservados.</p>
+            <div class="space-x-6">
+                <a href="#" class="hover:text-white transition">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA FAQ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqContainer = document.getElementById('faq-container');
+            if (faqContainer) {
+                const questions = faqContainer.querySelectorAll('.faq-question');
+                questions.forEach(question => {
+                    question.addEventListener('click', () => {
+                        // Fecha todas as outras perguntas abertas se não permitir múltiplas abertas
+                        /*
+                        questions.forEach(otherQuestion => {
+                            if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                                otherQuestion.classList.remove('active');
+                            }
+                        });
+                        */
+                        
+                        // Alterna a classe 'active' na pergunta clicada
+                        question.classList.toggle('active');
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
 </html>
