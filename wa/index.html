@@ -1,126 +1,99 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>metawinfut - análises estratégicas</title> <meta name="description" content="o metawinfut é uma inteligência artificial focada em prever as tendências do mini-indice do IBOV entregando análises completas de todo o cenário econômico em segundos"> <link rel="icon" href="favicon.ico" type="image/x-icon"> <style>
+
+    <!-- Título e Meta Descrição -->
+    <title>MetaWinFut - A Vantagem para Daytraders</title>
+    <meta name="description" content="Acesso a uma ferramenta de Inteligência Artificial que interpreta o impacto do mercado financeiro no mini-índice, antes que as notícias se espalhem.">
+
+    <!-- Favicon (substitua 'favicon.ico' pelo caminho do seu ícone) -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Meta Pixel Code (substitua pelo seu código) -->
+    <script>
+    // Cole o seu código do Pixel do Facebook aqui
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* Estilo customizado para usar a fonte Inter com peso maior */
         body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: #1A1A2E; /* Azul imperial escuro / Roxo escuro */
-            color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-
-        .logo {
-            max-width: 320px;
-            width: 70%;
-            height: auto;
-            margin-bottom: 35px; /* Ajuste de margem */
+        h1 {
+            font-weight: 900; /* Black weight for headline */
         }
-
-        .headline {
-            font-size: 1.9em;
-            font-weight: 600;
-            margin-bottom: 15px; /* Reduzida para acomodar o subtítulo */
-            line-height: 1.4;
-            max-width: 680px; /* Leve ajuste para o novo texto */
-            color: #F0F0F0;
-        }
-
-        .subtitle {
-            font-size: 1.15em; /* Tamanho para o subtítulo */
-            font-weight: 400;
-            line-height: 1.5;
-            color: #D0D0D0; /* Um tom de branco um pouco mais suave */
-            margin-top: 0;
-            margin-bottom: 35px; /* Espaço antes do botão CTA */
-            max-width: 550px;
-        }
-
+        /* Efeito de transição suave no botão */
         .cta-button {
-            display: inline-block;
-            background-color: #FF7F00; /* Laranja vibrante */
-            color: #000000; /* Texto PRETO */
-            padding: 18px 40px; /* Padding ajustado para o novo texto */
-            text-decoration: none;
-            font-size: 1.25em; /* Tamanho do texto do botão */
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            line-height: 1.3;
-            /* text-transform: uppercase;  Se quiser forçar maiúsculas via CSS */
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
-
-        .cta-button:hover,
-        .cta-button:focus {
-            background-color: #E67300;
+        .cta-button:hover {
             transform: translateY(-2px);
-        }
-
-        /* Media queries para responsividade */
-        @media (max-width: 768px) {
-            .headline {
-                font-size: 1.7em; /* Ajuste para tablet */
-                max-width: 90%;
-            }
-
-            .subtitle {
-                font-size: 1.05em;
-                max-width: 90%;
-            }
-
-            .cta-button {
-                font-size: 1.15em;
-                padding: 16px 35px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                max-width: 260px; /* Ajuste para mobile */
-                width: 65%;
-                margin-bottom: 30px;
-            }
-
-            .headline {
-                font-size: 1.45em; /* Ajuste para mobile */
-            }
-
-            .subtitle {
-                font-size: 1em;
-                margin-bottom: 30px;
-            }
-
-            .cta-button {
-                font-size: 1.1em; /* Ajuste para mobile */
-                padding: 15px 30px;
-                width: 85%;
-                max-width: 320px; /* Ajuste para o novo texto */
-                box-sizing: border-box;
-            }
+            box-shadow: 0 10px 20px -5px rgba(129, 140, 248, 0.25);
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-900">
 
-    <img src="../logo.png" alt="MetaWIN Logo" class="logo">
+    <!-- Container Principal -->
+    <main class="min-h-screen flex flex-col items-center justify-center p-4 text-center">
+        
+        <div class="max-w-xl w-full">
+            <!-- Logo -->
+            <img 
+                src="../logo.png"
+                alt="Logo MetaWinFut" 
+                class="w-48 sm:w-56 mx-auto mb-8"
+                onerror="this.style.display='none'"
+            >
+            
+            <!-- Headline -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl text-gray-100 leading-tight mb-4 uppercase">
+                A <span class="text-purple-500">Vantagem</span> que a maioria dos daytraders ainda não conhece.
+            </h1>
 
-    <h1 class="headline">Os movimentos mais fortes do WINFUT podem ser previstos — e você pode estar um passo à frente</h1>
+            <!-- Texto de Apoio -->
+            <p class="text-lg sm:text-xl text-gray-300 mb-10">
+                Acesso a uma ferramenta de Inteligência Artificial que interpreta o impacto do mercado financeiro no mini-índice, <span class="text-blue-400 font-bold">antes que as notícias se espalhem.</span>
+            </p>
+            
+            <!-- Container do Botão e Texto Informativo -->
+            <div class="flex flex-col items-center">
+                <!-- Botão de CTA (Call to Action) -->
+                <a 
+                    href="https://chat.whatsapp.com/GJsyDb2gbi1IO3wznRJvOM"
+                    target="_blank" 
+                    class="cta-button inline-flex items-center justify-center w-full sm:w-auto text-white text-lg sm:text-xl font-bold py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg"
+                >
+                    <i class="fa-solid fa-key mr-3 text-xl"></i>
+                    Receber Análises Exclusivas
+                </a>
+                
+                <!-- Texto Informativo do Telegram -->
+                <p class="mt-4 text-sm text-gray-400 flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    Entrada para nosso grupo gratuito no Whatsapp.
+                </p>
+            </div>
+        </div>
 
-    <p class="subtitle">Grupo gratuito no WhatsApp. Clique e comece</p>
-
-    <a href="https://chat.whatsapp.com/GJsyDb2gbi1IO3wznRJvOM" target="_blank" rel="noopener noreferrer" class="cta-button">
-        QUERO COMEÇAR
-    </a>
+    </main>
 
 </body>
 </html>
+
