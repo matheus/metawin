@@ -28,24 +28,6 @@
     </script>
     <!-- End Meta Pixel Code -->
 
-    <script>
-  (function(d,t) {
-    var BASE_URL="https://libertax-chatwoot.cyq697.easypanel.host";
-    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=BASE_URL+"/packs/js/sdk.js";
-    g.defer = true;
-    g.async = true;
-    s.parentNode.insertBefore(g,s);
-    g.onload=function(){
-      window.chatwootSDK.run({
-        websiteToken: 'JySFMzyJjqeq5dKs9e2YYZ6W',
-        baseUrl: BASE_URL
-      })
-    }
-  })(document,"script");
-</script>
-
-
     <style>
         /* Estilo customizado para usar a fonte Inter com peso maior */
         body {
@@ -89,6 +71,23 @@
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
+
+    <script>
+  (function(d,t) {
+    var BASE_URL="https://chatwoot.libertax.com.br";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.chatwootSDK.run({
+        websiteToken: 'JySFMzyJjqeq5dKs9e2YYZ6W',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
 
     <!-- SEÇÃO HERO -->
     <header class="min-h-screen flex flex-col items-center justify-center p-4 text-center bg-gray-900">
